@@ -4,6 +4,11 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Build Complete'
+        retry(count: 4) {
+          sh '''sssh
+'''
+        }
+
       }
     }
 
